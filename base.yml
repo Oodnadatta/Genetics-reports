@@ -1,0 +1,163 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Examen exome
+  # Remplacer hétérozygote par homozygote au besoin
+  - trigger: "ethc"
+    replace: "L'examen des données d'exome en trio (cas index et parents) a mené à l'identification de deux  variations à l'état hétérozygote composite dans le gène."
+    
+  - trigger: ":etFS"
+    replace: "L'examen des données d'exome en trio (cas index et parents) a mené à l'identification d'une variation faux-sens à l'état hétérozygote dans le gène."
+    
+  - trigger: ":esFS"
+    replace: "L'examen des données d'exome du cas index a mené à l'identification d'une variation faux-sens à l'état hétérozygote dans le gène."
+    
+  - trigger: ":etns"
+    replace: "L'examen des données d'exome en trio (cas index et parents) a mené à l'identification d'une variation non-sens à l'état hétérozygote dans le gène."
+    
+  - trigger: ":esns"
+    replace: "L'examen des données d'exome du cas index a mené à l'identification d'une variation non-sens à l'état hétérozygote dans le gène."
+    
+  - trigger: ":etdelins"
+    replace: "L'examen des données d'exome en trio (cas index et parents) a mené à l'identification d'une delins en phase à l'état hétérozygote dans le gène."
+    
+  - trigger: ":esdelins"
+    replace: "L'examen des données d'exome du cas index a mené à l'identification d'une delins en phase à l'état hétérozygote dans le gène."
+
+  # Examen génome
+  # Remplacer hétérozygote par homozygote au besoin
+  - trigger: ":gtFS"
+    replace: "L'examen des données de génome en trio (cas index et parents) a mené à l'identification d'une variation faux-sens à l'état hétérozygote dans le gène."
+    
+  - trigger: ":gsFS"
+    replace: "L'examen des données de génome du cas index a mené à l'identification d'une variation faux-sens à l'état hétérozygote dans le gène."
+    
+  - trigger: ":gtns"
+    replace: "L'examen des données de génome en trio (cas index et parents) a mené à l'identification d'une variation non-sens à l'état hétérozygote dans le gène."
+    
+  - trigger: ":gsns"
+    replace: "L'examen des données de génome du cas index a mené à l'identification d'une variation non-sens à l'état hétérozygote dans le gène."
+    
+  - trigger: ":gtdelins"
+    replace: "L'examen des données de génome en trio (cas index et parents) a mené à l'identification d'une delins en phase à l'état hétérozygote dans le gène."
+    
+  - trigger: ":gsdelins"
+    replace: "L'examen des données de génome du cas index a mené à l'identification d'une delins en phase à l'état hétérozygote dans le gène."
+  
+  # Inheritance
+  - trigger: ":dn"
+    replace: "La variation est survenue de novo."
+    
+  - trigger: ":hm"
+    replace: "La variation est présente chez la mère à l'état hétérozygote."
+    
+  - trigger: ":hp"
+    replace: "La variation est présente chez le père à l'état hétérozygote."
+  
+  # gnomAD    
+  - trigger: ":agnom"
+    replace: "La variation est absente de la base de données gnomAD v4.1.0."
+    
+  - trigger: ":pgnom"
+    replace: "La variation est présente dans la base de données gnomAD v4.1.0."
+  
+  # Conservation et domaine
+  - trigger: ":tcons"
+    replace: "Elle touche un acide aminé très conservé au cours de l'évolution, localisé dans le domaine."
+
+  - trigger: ":cons"
+    replace: "Elle touche un acide aminé relativement conservé au cours de l'évolution, localisé dans le domaine."
+    
+  - trigger: ":mcons"
+    replace: "Elle touche un acide aminé moyennement conservé au cours de l'évolution, localisé dans le domaine."
+    
+  # Prédiction in silico    
+  - trigger: ":dpred"
+    replace: "Les outils de prédiction in silico sont en faveur du caractère délétère de la variation."
+    
+  - trigger: ":bpred"
+    replace: "Les outils de prédiction in silico sont discordants quant au caractère délétère de la variation."
+ 
+  # ClinVar
+  # Au besoin, associer les phénotypes associés
+  - trigger: ":cv4"
+    replace: "La variation est rapportée dans la base de données ClinVar comme étant probablement pathogène."
+
+  - trigger: ":cv5"
+    replace: "La variation est rapportée dans la base de données ClinVar comme étant pathogène."
+
+  - trigger: ":lovd4"
+    replace: "La variation est rapportée dans LOVD comme étant probablement pathogène."
+
+  - trigger: ":lovd5"
+    replace: "La variation est rapportée dans LOVD comme étant pathogène."
+    
+  - trigger: ":cvtemper"
+    replace: "Cependant la soumission n'est pas accompagnée de publications scientifiques pouvant supporter la pathogénicité de la variation par des tests fonctionnels."
+  
+  # littérature
+  # merge TODO FIXME
+  
+  # OMIM
+  - trigger: ":ad"
+    replace: "Les variations monoalléliques pathogènes du gène sont impliquées dans (OMIM #) de transmission autosomique dominante."
+    
+  - trigger: ":ar"
+    replace: "Les variations bialléliques pathogènes du gène sont impliquées dans (OMIM #) de transmission autosomique récessive."
+    
+  - trigger: ":rlx"
+    replace: "Les variations pathogènes monoalléliques chez les hommes et bialléliques chez les femmes du gène sont impliquées dans (OMIM #) de transmission récessive liée à l'X."
+    
+  - trigger: ":dlx"
+    replace: "Les variations monoalléliques pathogènes du gène sont impliquées dans (OMIM #) de transmission dominante liée à l'X."
+
+  # Clinique
+  - trigger: ":comp"
+    replace: "Les signes cliniques observés sont compatibles avec ce syndrome."
+    
+  # Conclusion
+  - trigger: ":c3"
+    replace: "En l'état actuel des connaissances et des techniques, la variation de séquence est considérée comme étant de signification incertaine."
+ 
+  - trigger: ":c4"
+    replace: "En l'état actuel des connaissances et des techniques, cette variation de séquence probablement pathogène est considérée comme la cause probable de la symptomatologie observée."
+
+  - trigger: ":p4"
+    replace: "En l’état actuel des connaissances et des techniques, cette variation de séquence probablement pathogène est considérée comme la cause probable d'une partie du phénotype observé."
+
+  - trigger: ":c5"
+    replace: "En l'état actuel des connaissances et des techniques, cette variation de séquence pathogène est considérée comme la cause de la symptomatologie."
+    
+  - trigger: ":p5"
+    replace: "En l’état actuel des connaissances et des techniques, cette variation de séquence pathogène est considérée comme la cause d'une partie du phénotype observé."
+  
+  # Variation hétérozygote pour une maladie récessive  
+  - trigger: ":hetrec"
+    replace: "En l’état actuel des connaissances et des techniques, il s’agit d’une variation (probablement) pathogène pour une maladie de transmission autosomique récessive, insuffisante à elle seule à l’état hétérozygote pour être rapportée comme étant en lien avec la maladie.
+    Un rétrophénotypage avec une confrontation des descriptions de la littérature ainsi que la réalisation d’un séquençage de génome à la recherche d’une éventuelle seconde variation (non détectable par l'exome) dans le gène X pourrait éventuellement permettre de progresser dans l'identification d'une cause moléculaire de la pathologie."
+  
+  # Génome trio négatif
+  - trigger: ":gtn"
+    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en trio (cas index et parents) n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
+     
+  # Génome solo négatif
+  - trigger: ":gsn"
+    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en solo n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
+  
+  # Présymptomatique
+  - trigger: ":dsp1"
+    replace: "Absence de la variation de séquence dans le gène. Ce résultat doit être confirmé sur un second prélèvement sanguin indépendant."
+    
+  - trigger: ":dps2"
+    replace: "Absence de la variation de séquence dans le gène. Ce résultat confirme celui obtenu sur le premier prélèvement sanguin."
+  
+  # Étude
+  - trigger: ":étude"
+    replace: "Une étude menée par le Dr X est en cours pour mieux caractériser les pathologies associées au gène."          
