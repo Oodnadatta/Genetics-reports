@@ -11,7 +11,7 @@ matches:
   # Examen exome
   # Remplacer hétérozygote par homozygote au besoin
   - trigger: "ethc"
-    replace: "L'examen des données d'exome en trio (cas index et parents) a mené à l'identification de deux  variations à l'état hétérozygote composite dans le gène."
+    replace: "L'examen des données d'exome en trio (cas index et parents) a mené à l'identification de deux variations à l'état hétérozygote composite dans le gène."
     
   - trigger: ":etFS"
     replace: "L'examen des données d'exome en trio (cas index et parents) a mené à l'identification d'une variation faux-sens à l'état hétérozygote dans le gène."
