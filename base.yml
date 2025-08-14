@@ -69,14 +69,21 @@ matches:
     replace: "La variation est présente dans la base de données gnomAD v4.1.0."
   
   # Conservation et domaine
+
   - trigger: ":tcons"
-    replace: "Elle touche un acide aminé très conservé au cours de l'évolution, localisé dans le domaine."
+    replace: "Elle touche un acide aminé très conservé au cours de l'évolution, "
 
   - trigger: ":cons"
-    replace: "Elle touche un acide aminé relativement conservé au cours de l'évolution, localisé dans le domaine."
+    replace: "Elle touche un acide aminé relativement conservé au cours de l'évolution, "
     
   - trigger: ":mcons"
-    replace: "Elle touche un acide aminé moyennement conservé au cours de l'évolution, localisé dans le domaine."
+    replace: "Elle touche un acide aminé moyennement conservé au cours de l'évolution, "
+  
+  - trigger: ":ddom"
+    replace: "localisé dans le domaine."
+  
+  - trigger: ":hdom"
+    replace: "non localisé dans un domaine protéique fonctionnel connu."
     
   # Prédiction in silico    
   - trigger: ":dpred"
@@ -84,6 +91,9 @@ matches:
     
   - trigger: ":bpred"
     replace: "Les outils de prédiction in silico sont discordants quant au caractère délétère de la variation."
+    
+  - trigger: ":intol"
+    replace: "Le gène est intolérant aux variations perte de fonction (LOEUF à , gnomAD v4.1.0)."
  
   # ClinVar
   # Au besoin, associer les phénotypes associés
@@ -103,7 +113,7 @@ matches:
     replace: "Cependant la soumission n'est pas accompagnée de publications scientifiques pouvant supporter la pathogénicité de la variation par des tests fonctionnels."
   
   # littérature
-  # merge TODO FIXME
+  
   
   # OMIM
   - trigger: ":ad"
@@ -119,7 +129,7 @@ matches:
     replace: "Les variations monoalléliques pathogènes du gène sont impliquées dans (OMIM #) de transmission dominante liée à l'X."
 
   # Clinique
-  - trigger: ":comp"
+  - trigger: ":clinic"
     replace: "Les signes cliniques observés sont compatibles avec ce syndrome."
     
   # Conclusion
@@ -138,26 +148,49 @@ matches:
   - trigger: ":p5"
     replace: "En l’état actuel des connaissances et des techniques, cette variation de séquence pathogène est considérée comme la cause d'une partie du phénotype observé."
   
+  # Explorations (rétrophénotypage)
+  - trigger: ":rpci"
+    replace: "Un rétrophénotypage pourrait permettre de mieux évaluer l’implication éventuelle de cette variation dans le phénotype."
+    
+  - trigger: ":rpm"
+    replace: "Un rétrophénotypage de la mère pourrait permettre de mieux évaluer l’implication éventuelle de cette variation dans le phénotype."
+    
+  - trigger: ":rpp"
+    replace: "Un rétrophénotypage du père pourrait permettre de mieux évaluer l’implication éventuelle de cette variation dans le phénotype."
+    
+  - trigger: ":épidiag"
+    replace: "Une étude de la méthylation via EpiSign est possible pour les variations du gène. Elle pourrait permettre de progresser dans l'interprétation de cette variation."
+      
+  - trigger: ":épirech"
+    replace: "Une étude de la méthylation de l'ADN, dans le cadre de la recherche, pourrait permettre de mieux évaluer l'implication de cette variation dans le phénotype."
+    
+  #Une étude de méthylation, dans le cadre de la recherche, pourrait également permettre de confirmer ou non l’implication de cette variation en pathologie humaine et éventuellement de stratifier les variations dans ce gène selon la sévérité du phénotype des sujets atteints. 
+  
   # Variation hétérozygote pour une maladie récessive  
   - trigger: ":hetrec"
     replace: "En l’état actuel des connaissances et des techniques, il s’agit d’une variation (probablement) pathogène pour une maladie de transmission autosomique récessive, insuffisante à elle seule à l’état hétérozygote pour être rapportée comme étant en lien avec la maladie.
     Un rétrophénotypage avec une confrontation des descriptions de la littérature ainsi que la réalisation d’un séquençage de génome à la recherche d’une éventuelle seconde variation (non détectable par l'exome) dans le gène X pourrait éventuellement permettre de progresser dans l'identification d'une cause moléculaire de la pathologie."
   
   # Génome trio négatif
-  - trigger: ":gtn"
-    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en trio (cas index et parents) n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
+  - trigger: ":gtneg"
+    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en trio (cas index et parents) n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
      
   # Génome solo négatif
-  - trigger: ":gsn"
-    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en solo n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
+  - trigger: ":gsneg"
+    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en solo n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
   
   # Présymptomatique
   - trigger: ":dsp1"
-    replace: "Absence de la variation de séquence dans le gène. Ce résultat doit être confirmé sur un second prélèvement sanguin indépendant."
+    replace: "Absence de la variation de séquence dans le gène.  Ce résultat doit être confirmé sur un second prélèvement sanguin indépendant."
     
   - trigger: ":dps2"
-    replace: "Absence de la variation de séquence dans le gène. Ce résultat confirme celui obtenu sur le premier prélèvement sanguin."
+    replace: "Absence de la variation de séquence dans le gène.  Ce résultat confirme celui obtenu sur le premier prélèvement sanguin."
+  
+  # Faux positif
+  - trigger: ":fp"
+    replace: "Les données observées suggèrent la possibilité d’un faux positif. Il est indispensable de confirmer la présence de cette variation par une technique alternative. Si la présence de la variation est confirmée, elle est à considérer comme étant la cause de la pathologie."
   
   # Étude
   - trigger: ":étude"
-    replace: "Une étude menée par le Dr X est en cours pour mieux caractériser les pathologies associées au gène."          
+    replace: "Une étude menée par le Dr X est en cours pour mieux caractériser les pathologies associées au gène."
+    
