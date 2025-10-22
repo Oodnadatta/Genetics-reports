@@ -36,23 +36,41 @@ matches:
   - trigger: "gthc"
     replace: "L'examen des données de génome en trio (cas index et parents) a mené à l'identification de deux variations à l'état hétérozygote composite dans le gène."
     
-  - trigger: ":gtFS"
-    replace: "L'examen des données de génome en trio (cas index et parents) a mené à l'identification d'une variation faux-sens à l'état hétérozygote dans le gène."
-    
   - trigger: ":gsFS"
     replace: "L'examen des données de génome du cas index a mené à l'identification d'une variation faux-sens à l'état hétérozygote dans le gène."
     
-  - trigger: ":gtns"
-    replace: "L'examen des données de génome en trio (cas index et parents) a mené à l'identification d'une variation non-sens à l'état hétérozygote dans le gène."
+  - trigger: ":gdFS"
+    replace: "L'examen des données de génome en duo (cas index et père/mère) a mené à l'identification d'une variation faux-sens à l'état hétérozygote dans le gène."
+    
+  - trigger: ":gtFS"
+    replace: "L'examen des données de génome en trio (cas index et parents) a mené à l'identification d'une variation faux-sens à l'état hétérozygote dans le gène."
+    
+  - trigger: ":gqFS"
+    replace: "L'examen des données de génome en quatuor (cas index, parents et frère/sœur) a mené à l'identification d'une variation faux-sens à l'état hétérozygote dans le gène."
     
   - trigger: ":gsns"
     replace: "L'examen des données de génome du cas index a mené à l'identification d'une variation non-sens à l'état hétérozygote dans le gène."
+
+  - trigger: ":gdns"
+    replace: "L'examen des données de génome en duo (cas index et père/mère) a mené à l'identification d'une variation non-sens à l'état hétérozygote dans le gène."
+
+  - trigger: ":gtns"
+    replace: "L'examen des données de génome en trio (cas index et parents) a mené à l'identification d'une variation non-sens à l'état hétérozygote dans le gène."
     
-  - trigger: ":gtdelins"
-    replace: "L'examen des données de génome en trio (cas index et parents) a mené à l'identification d'une delins en phase à l'état hétérozygote dans le gène."
+  - trigger: ":gqns"
+    replace: "L'examen des données de génome en quatuor (cas index, parents et frère/sœur) a mené à l'identification d'une variation non-sens à l'état hétérozygote dans le gène."
     
   - trigger: ":gsdelins"
     replace: "L'examen des données de génome du cas index a mené à l'identification d'une delins en phase à l'état hétérozygote dans le gène."
+    
+  - trigger: ":gtdelins"
+    replace: "L'examen des données de génome en duo (cas index et père/mère) a mené à l'identification d'une delins en phase à l'état hétérozygote dans le gène."
+
+  - trigger: ":gtdelins"
+    replace: "L'examen des données de génome en trio (cas index et parents) a mené à l'identification d'une delins en phase à l'état hétérozygote dans le gène."
+    
+  - trigger: ":gqdelins"
+    replace: "L'examen des données de génome en quatuor (cas index, parents et frère/sœur) a mené à l'identification d'une delins à l'état hétérozygote dans le gène."
   
   # Inheritance
   - trigger: ":dn"
@@ -63,7 +81,13 @@ matches:
     
   - trigger: ":hp"
     replace: "La variation est présente chez le père à l'état hétérozygote."
-  
+    
+  - trigger: ":nhm"
+    replace: "La variation n'est pas détectée chez la mère."
+
+  - trigger: ":nhp"
+    replace: "La variation n'est pas détectée chez le père."
+    
   # gnomAD    
   - trigger: ":agnom"
     replace: "La variation est absente de la base de données gnomAD v4.1.0."
@@ -97,6 +121,9 @@ matches:
     
   - trigger: ":intol"
     replace: "Le gène est intolérant aux variations perte de fonction (LOEUF à , gnomAD v4.1.0)."
+    
+  - trigger: ":predsplice"
+    replace: "Les scores de prédiction in silico prédisent un effet délétère sur l’épissage avec une altération très probable du site accepteur/donneur de l'intron/exon."
  
   # ClinVar
   # Au besoin, associer les phénotypes associés
@@ -136,7 +163,7 @@ matches:
 
   # Clinique
   - trigger: ":clinic"
-    replace: "Les signes cliniques observés sont compatibles avec ce syndrome."
+    replace: "Les signes cliniques observés sont compatibles avec cette pathologie."
     
   # Conclusion
   - trigger: ":c3"
@@ -162,8 +189,22 @@ matches:
 
   - trigger: ":génotypec5"
     replace: "En l'état actuel des connaissances et des techniques, le génotype associant ces deux variations de séquence est considéré comme étant pathogène."
+
+    # Données incidentes
+  - trigger: ":dic4"
+    replace: "En l'état actuel des connaissances et des techniques, cette variation de séquence est considérée comme probablement pathogène. S'agissant d'un diagnostic présymptomatique, ce résultat doit être confirmé sur un second échantillon biologique indépendant par un laboratoire expert. Une consultation spécialisée est nécessaire pour une prise en charge adaptée."
     
-  # Explorations (rétrophénotypage, étude d'épissage)
+  - trigger: ":dic5"
+    replace: "En l'état actuel des connaissances et des techniques, cette variation de séquence est considérée comme pathogène. S'agissant d'un diagnostic présymptomatique, ce résultat doit être confirmé sur un second échantillon biologique indépendant par un laboratoire expert. Une consultation spécialisée est nécessaire pour une prise en charge adaptée."
+    
+  # Confirmation
+  - trigger: ":conf"
+    replace: "sous réserve de confirmation par séquençage de Sanger ciblé."
+
+  # Explorations (ségrégation, rétrophénotypage, étude d'épissage)
+  - trigger: ":segreg"
+    replace: "Une étude de la ségrégation familiale associée à un phénotypage des membres pourrait éventuellement permettre de progresser dans la classification de cette variation."
+  
   - trigger: ":rpci"
     replace: "Un rétrophénotypage pourrait permettre de mieux évaluer l’implication éventuelle de cette variation dans le phénotype."
     
@@ -182,8 +223,12 @@ matches:
   - trigger: ":ARN"
     replace: "Une analyse d’épissage sur ARN extrait d’un échantillon sanguin sur tube PAXgene pourrait contribuer à mieux comprendre l’implication éventuelle de cette variation dans la pathologie observée."
     
-  #Une étude de méthylation, dans le cadre de la recherche, pourrait également permettre de confirmer ou non l’implication de cette variation en pathologie humaine et éventuellement de stratifier les variations dans ce gène selon la sévérité du phénotype des sujets atteints. 
+  #Une étude de méthylation, dans le cadre de la recherche, pourrait également permettre de confirmer ou non l’implication de cette variation en pathologie humaine et éventuellement de stratifier les variations dans ce gène selon la sévérité du phénotype des sujets atteints.
   
+  # Surveillance
+  - trigger: ":neuroped"
+    replace: "Une consultation en neuropédiatrie est recommandée, afin de dépister une éventuelle épilepsie et de mettre en place un suivi neurologique adapté."
+    
   # Variation hétérozygote pour une maladie récessive  
   - trigger: ":hetrec"
     replace: "En l’état actuel des connaissances et des techniques, il s’agit d’une variation (probablement) pathogène pour une maladie de transmission autosomique récessive, insuffisante à elle seule à l’état hétérozygote pour être rapportée comme étant en lien avec la maladie.
@@ -192,22 +237,39 @@ matches:
   # Génome trio négatif
   - trigger: ":gtneg"
     replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en trio (cas index et parents) n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
+    
+  # Génome duo négatif
+  - trigger: ":gdneg"
+    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en duo (cas index et mère/père) n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
      
   # Génome solo négatif
   - trigger: ":gsneg"
     replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en solo n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
   
+  # Dépistage néonatal
+  - trigger: ":ddn"
+    replace: "Le dépistage néonatal génomique par analyse d’un panel de gènes in silico (listes 1 et 2) en solo a mené à l'identification d'une variation hétérozygote de type X dans le gène X."
+  
   # Présymptomatique
   - trigger: ":dsp1"
-    replace: "Absence de la variation de séquence dans le gène.  Ce résultat doit être confirmé sur un second prélèvement sanguin indépendant."
+    replace: "Absence de la variation de séquence dans le gène. Ce résultat doit être confirmé sur un second prélèvement sanguin indépendant."
     
   - trigger: ":dps2"
-    replace: "Absence de la variation de séquence dans le gène.  Ce résultat confirme celui obtenu sur le premier prélèvement sanguin."
+    replace: "Absence de la variation de séquence dans le gène. Ce résultat confirme celui obtenu sur le premier prélèvement sanguin."
   
   # Faux positif
   - trigger: ":fp"
     replace: "Les données observées suggèrent la possibilité d’un faux positif. Il est indispensable de confirmer la présence de cette variation par une technique alternative. Si la présence de la variation est confirmée, elle est à considérer comme étant la cause de la pathologie."
-  
-  # Étude
+    
+  # Recherche
+  - trigger: ":rech"
+    replace: "L’analyse de génome réalisée chez X, né le X, a mené à l’identification d’une variation de signification incertaine dans le cadre de la recherche."
+    
+  - trigger: ":nonomim"
+    replace: "Le gène n’est actuellement pas rapporté comme étant morbide dans la base de données OMIM."
+    
+  - trigger: ":gm"
+    replace: "Un partage de la variation sur la plateforme GeneMatcher est réalisé et pourrait permettre de mieux caractériser les pathologies associées au gène et éventuellement de progresser dans la classification de la variation."
+    
   - trigger: ":étude"
     replace: "Une étude menée par le Dr X est en cours pour mieux caractériser les pathologies associées au gène."
