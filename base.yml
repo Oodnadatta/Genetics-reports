@@ -8,6 +8,30 @@
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
+  # Exome solo négatif
+  - trigger: ":esneg"
+    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse de l'exome en solo n’a pas permis l’identification d’une variation de séquence pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
+    
+  # Exome duo négatif
+  - trigger: ":edneg"
+    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse de l'exome en duo (cas index et mère/père) n’a pas permis l’identification d’une variation de séquence pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
+     
+  # Exome trio négatif
+  - trigger: ":etneg"
+    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse de l'exome en trio (cas index et parents) n’a pas permis l’identification d’une variation de séquence pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
+
+  # Génome solo négatif
+  - trigger: ":gsneg"
+    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en solo n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
+    
+  # Génome duo négatif
+  - trigger: ":gdneg"
+    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en duo (cas index et mère/père) n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
+     
+  # Génome trio négatif
+  - trigger: ":gtneg"
+    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en trio (cas index et parents) n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
+    
   # Examen exome
   # Remplacer hétérozygote par homozygote au besoin
   - trigger: "ethc"
@@ -87,6 +111,9 @@ matches:
 
   - trigger: ":nhp"
     replace: "La variation n'est pas détectée chez le père."
+    
+  - triffer: ":hd"
+    replace: "La variation est présente chez chacun des parents à l'état hétérozygote."
     
   # gnomAD    
   - trigger: ":agnom"
@@ -233,19 +260,7 @@ matches:
   - trigger: ":hetrec"
     replace: "En l’état actuel des connaissances et des techniques, il s’agit d’une variation (probablement) pathogène pour une maladie de transmission autosomique récessive, insuffisante à elle seule à l’état hétérozygote pour être rapportée comme étant en lien avec la maladie.
     Un rétrophénotypage avec une confrontation des descriptions de la littérature ainsi que la réalisation d’un séquençage de génome à la recherche d’une éventuelle seconde variation (non détectable par l'exome) dans le gène X pourrait éventuellement permettre de progresser dans l'identification d'une cause moléculaire de la pathologie."
-  
-  # Génome trio négatif
-  - trigger: ":gtneg"
-    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en trio (cas index et parents) n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
     
-  # Génome duo négatif
-  - trigger: ":gdneg"
-    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en duo (cas index et mère/père) n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
-     
-  # Génome solo négatif
-  - trigger: ":gsneg"
-    replace: "Dans la limite des connaissances actuelles et des techniques utilisées, l’analyse du génome en solo n’a pas permis l’identification d’une variation génomique pouvant expliquer le phénotype selon les informations cliniques transmises. Un résultat négatif n’exclut pas la possibilité d’une maladie génétique."
-  
   # Dépistage néonatal
   - trigger: ":ddn"
     replace: "Le dépistage néonatal génomique par analyse d’un panel de gènes in silico (listes 1 et 2) en solo a mené à l'identification d'une variation hétérozygote de type X dans le gène X."
