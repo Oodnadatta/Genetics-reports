@@ -54,6 +54,12 @@ matches:
     
   - trigger: ":esdelins"
     replace: "L'examen des données d'exome du cas index a mené à l'identification d'une delins en phase à l'état hétérozygote dans le gène."
+    
+  - trigger: "etsplice"
+    replace: "L'examen des données d'exome en trio (cas index et parents) a mené à l'identification d'une substitution nucléotidique à l'état hétérozygote dans l'exon/intron du gène."
+    
+  - trigger: "essplice"
+    replace: "L'examen des données d'exome en solo a mené à l'identification d'une substitution nucléotidique à l'état hétérozygote dans l'exon/intron du gène."
 
   # Examen génome
   # Remplacer hétérozygote par homozygote au besoin
@@ -260,7 +266,8 @@ matches:
   - trigger: ":hetrec"
     replace: "En l’état actuel des connaissances et des techniques, il s’agit d’une variation (probablement) pathogène pour une maladie de transmission autosomique récessive, insuffisante à elle seule à l’état hétérozygote pour être rapportée comme étant en lien avec la maladie.
     Un rétrophénotypage avec une confrontation des descriptions de la littérature ainsi que la réalisation d’un séquençage de génome à la recherche d’une éventuelle seconde variation (non détectable par l'exome) dans le gène X pourrait éventuellement permettre de progresser dans l'identification d'une cause moléculaire de la pathologie."
-    
+  
+  
   # Dépistage néonatal
   - trigger: ":ddn"
     replace: "Le dépistage néonatal génomique par analyse d’un panel de gènes in silico (listes 1 et 2) en solo a mené à l'identification d'une variation hétérozygote de type X dans le gène X."
